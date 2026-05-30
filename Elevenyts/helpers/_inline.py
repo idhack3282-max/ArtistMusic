@@ -32,29 +32,17 @@ class Inline:
             )
 
         if not remove:
-            # Seek buttons row
-            
-            # Main control buttons row
             keyboard.append(
                 [
-                    self.ikb(
-                        text="▷", callback_data=f"controls resume {chat_id}"),
-                    self.ikb(
-                        text="II", callback_data=f"controls pause {chat_id}"),
-                    self.ikb(
-                        text="↻", callback_data=f"controls replay {chat_id}"),
-                    self.ikb(
-                        text="‣‣I", callback_data=f"controls skip {chat_id}"),
-                    self.ikb(
-                        text="▢", callback_data=f"controls stop {chat_id}"),
+                    self.ikb(text="▷", callback_data=f"controls resume {chat_id}", style="primary"),
+                    self.ikb(text="II", callback_data=f"controls pause {chat_id}", style="primary"),
+                    self.ikb(text="↻", callback_data=f"controls replay {chat_id}", style="primary"),
+                    self.ikb(text="‣‣I", callback_data=f"controls skip {chat_id}", style="primary"),
+                    self.ikb(text="▢", callback_data=f"controls stop {chat_id}", style="primary"),
                 ]
             )
-            # Delete button as full-width button at bottom
             keyboard.append(
-                [
-                    self.ikb(
-                        text="ᴅᴇʟᴇᴛᴇ", callback_data=f"controls close {chat_id}"),
-                ]
+                [self.ikb(text="ᴅᴇʟᴇᴛᴇ", callback_data=f"controls close {chat_id}", style="danger")]
             )
         return self.ikm(keyboard)
 
